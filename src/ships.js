@@ -14,6 +14,8 @@ Ship.prototype.dock = function () {
   this.currentPort.addShip(this);
 };
 
+// testing
+
 Ship.prototype.setSail = function () {
   const itinerary = this.itinerary;
   const currentPortIndex = itinerary.ports.indexOf(this.currentPort);
