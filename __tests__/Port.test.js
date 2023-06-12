@@ -1,4 +1,4 @@
-const { Ship, Port } = require("../src/ships.js");
+const { Port } = require("../src/ports.js");
 
 describe("Port", () => {
   it("instantiates Port object", () => {
@@ -6,8 +6,7 @@ describe("Port", () => {
   });
 
   it("checks name of Port", () => {
-    const port = new Port();
-    port.name = "Spithead";
+    const port = new Port("Spithead");
 
     expect(port.name).toEqual("Spithead");
   });
@@ -28,13 +27,17 @@ describe("Port", () => {
     });
 
     it("can remove a ship from Port", () => {
-      const Supply = jest.fn();
-      const Sirius = jest.fn();
+      const supply = jest.fn();
+      const sirius = jest.fn();
 
-      port.addShip(Supply);
-      port.addShip(Sirius);
+      port.addShip(supply);
+      port.addShip(sirius);
 
-      port.removeShip(Supply);
+      expect(port.ships).toContain(sirius);
+
+      port.removeShip(supply);
+
+      expect(port.ships).not.toContain(sirius);
     });
   });
 });

@@ -1,5 +1,5 @@
-const { Ship, Port } = require("../src/ships.js");
-const dock = require("../src/ships.js");
+const { Ship } = require("../src/ships.js");
+const { Port } = require("../src/ports.js");
 const Itinerary = require("../src/itinerary.js");
 
 describe("Ship", () => {
@@ -9,14 +9,15 @@ describe("Ship", () => {
     let ship;
 
     beforeEach(() => {
-      port = new Port("Spithead");
-      /* port = {
+      port = {
         addShip: jest.fn(),
         removeShip: jest.fn(),
         name: "Dover",
         ships: [],
-      }; */
-      itinerary = new Itinerary([port]);
+      };
+      itinerary = {
+        ports: [port],
+      };
       ship = new Ship(itinerary);
     });
 

@@ -48,4 +48,4 @@ class Port {
   }
 }
 
-module.exports = { Ship, Port };
+module.exports = { Ship };

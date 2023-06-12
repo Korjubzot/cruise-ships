@@ -1,4 +1,3 @@
-const { Port } = require("../src/ships.js");
 const Itinerary = require("../src/itinerary.js");
 
 describe("Itinerary", () => {
@@ -7,8 +6,8 @@ describe("Itinerary", () => {
   });
 
   it("can have ports", () => {
-    const spithead = new Port("Spithead");
-    const botanyBay = new Port("Botany Bay");
+    const spithead = jest.fn();
+    const botanyBay = jest.fn();
 
     const itinerary = new Itinerary([spithead, botanyBay]);
 
